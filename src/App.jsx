@@ -11,25 +11,34 @@ function App() {
   return (
     <>
       <h1>My wishlist</h1>
-      <fieldset id="new wishes">
+      <fieldset id="new wishes" className="wish-input">
         <p>
-          <input type="text" placeholder="Introduce tu deseo" />
+          <input
+            type="text"
+            className="wish-input__field"
+            placeholder="Introduce tu deseo"
+          />
         </p>
         <p>
-          <button>add wish</button>
+          <button className="wish-clear">add wish</button>
         </p>
-        <legend>Adding new whishes</legend>
+        <legend className="wish-input__label">Adding new whishes</legend>
       </fieldset>
       <div id="list">
-        <ul>
+        <ul className="wish-list">
           {wishlist.map(({ id, name, done }) => (
-            <li key={id}>
+            <li
+              key={id}
+              className={`wish-list_item  ${
+                done ? "wish-list__item--done" : ""
+              }`}
+            >
               <input type="checkbox" defaultChecked={done} id={id} />
               <label htmlFor={id}>{name}</label>
             </li>
           ))}
         </ul>
-        <button>Archive done</button>
+        <button className="wish-clear">Archive done</button>
       </div>
     </>
   );
