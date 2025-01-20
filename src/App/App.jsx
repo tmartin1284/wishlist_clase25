@@ -1,5 +1,6 @@
-//import React from "react";
+import React, { useState } from "react";
 import "./App.css";
+import WishInput from "../WishInput/WishInput.jsx";
 
 const wishlist = [
   { id: 1, name: "Playstation 5", done: false },
@@ -8,22 +9,12 @@ const wishlist = [
 ];
 
 function App() {
+  const [wishes, setWishes] = useState(wishlist);
+
   return (
     <>
       <h1>My wishlist</h1>
-      <fieldset id="new wishes" className="wish-input">
-        <p>
-          <input
-            type="text"
-            className="wish-input__field"
-            placeholder="Introduce tu deseo"
-          />
-        </p>
-        <p>
-          <button className="wish-clear">add wish</button>
-        </p>
-        <legend className="wish-input__label">Adding new whishes</legend>
-      </fieldset>
+      <WishInput setWishes={setWishes} />
 
       <div id="list">
         <ul className="wish-list">
