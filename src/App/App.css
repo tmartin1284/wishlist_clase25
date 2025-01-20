@@ -5,7 +5,8 @@
 body,
 html {
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  width: 90%;
 }
 .app {
   width: 400px;

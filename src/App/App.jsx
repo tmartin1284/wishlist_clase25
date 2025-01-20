@@ -24,6 +24,7 @@ function App() {
         </p>
         <legend className="wish-input__label">Adding new whishes</legend>
       </fieldset>
+
       <div id="list">
         <ul className="wish-list">
           {wishlist.map(({ id, name, done }) => (
