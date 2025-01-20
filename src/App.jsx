@@ -1,13 +1,13 @@
-import React from "react";
+//import React from "react";
 import "./App.css";
 
-function App() {
-  const wishlist = [
-    { id: 1, name: "Playstation 5", done: false },
-    { id: 2, name: "Macbook Pro", done: true },
-    { id: 3, name: "Tesla Model S", done: false },
-  ];
+const wishlist = [
+  { id: 1, name: "Playstation 5", done: false },
+  { id: 2, name: "Macbook Pro", done: true },
+  { id: 3, name: "Tesla Model S", done: false },
+];
 
+function App() {
   return (
     <>
       <h1>My wishlist</h1>
