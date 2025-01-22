@@ -15,9 +15,9 @@ export default function WishList({ wishes, onWishDoneChange }) {
 WishList.propTypes = {
   wishes: Proptypes.arrayOf(
     Proptypes.shape({
-      id: Proptypes.string,
-      text: Proptypes.string,
+      id: Proptypes.number,
       done: Proptypes.bool,
+      text: Proptypes.string,
     })
   ),
 

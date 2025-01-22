@@ -10,7 +10,7 @@ export default function WishItem({ wish, onDoneChange }) {
         type="checkbox"
         defaultChecked={wish.done}
         id={wish.id}
-        onChange={(e) => onDoneChange(!e.target.value)}
+        onChange={() => onDoneChange(!wish.done)}
       />
       <label htmlFor={wish.id}>{wish.text}</label>
     </li>
@@ -19,7 +19,7 @@ export default function WishItem({ wish, onDoneChange }) {
 
 WishItem.propTypes = {
   wish: Proptypes.shape({
-    id: Proptypes.string,
+    id: Proptypes.number,
     text: Proptypes.string,
     done: Proptypes.bool,
   }).isRequired,
