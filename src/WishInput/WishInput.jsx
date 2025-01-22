@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-export default function WishInput({ setWishes }) {
+export default function WishInput({ onNewWish }) {
   const [newWish, setNewWish] = useState("");
 
   const sendNewWish = () => {
@@ -11,7 +11,7 @@ export default function WishInput({ setWishes }) {
       done: false,
     };
     document.getElementById("input").value = "";
-    setWishes(nuevodeseo);
+    onNewWish(nuevodeseo);
   };
 
   return (
@@ -36,5 +36,5 @@ export default function WishInput({ setWishes }) {
 }
 
 WishInput.propTypes = {
-  setWishes: PropTypes.func.isRequired,
+  onNewWish: PropTypes.func.isRequired,
 };

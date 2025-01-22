@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import WishInput from "../WishInput/WishInput.jsx";
+import WishList from "../WishList/WishList.jsx";
 
 const wishlist = [
   { id: 1, name: "Playstation 5", done: false },
@@ -14,22 +15,10 @@ function App() {
   return (
     <>
       <h1>My wishlist</h1>
-      <WishInput setWishes={setWishes} />
+      <WishInput onNewWish={setWishes} />
+      <WishList wishes={wishes} onWishDoneChange={() => {}} />
 
       <div id="list">
-        <ul className="wish-list">
-          {wishlist.map(({ id, name, done }) => (
-            <li
-              key={id}
-              className={`wish-list_item  ${
-                done ? "wish-list__item--done" : ""
-              }`}
-            >
-              <input type="checkbox" defaultChecked={done} id={id} />
-              <label htmlFor={id}>{name}</label>
-            </li>
-          ))}
-        </ul>
         <button className="wish-clear">Archive done</button>
       </div>
     </>
