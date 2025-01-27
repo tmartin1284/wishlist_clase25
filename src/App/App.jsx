@@ -33,7 +33,12 @@ function App() {
       <WishList wishes={wishes} onWishDoneChange={() => {}} />
 
       <div id="list">
-        <button className="wish-clear">Archive done</button>
+        <button
+          className="wish-clear"
+          onClick={() => setWishes(wishes.filter((wish) => !wish.done))}
+        >
+          Archive done
+        </button>
       </div>
     </>
   );

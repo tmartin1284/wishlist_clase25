@@ -6,7 +6,7 @@ export default function WishList({ wishes, onWishDoneChange }) {
   return (
     <ul className="wish-list">
       {wishes.map((wish) => (
-        <WishItem key={wish.id} wish={wish} onDoneChange={onWishDoneChange} />
+        <WishItem key="{wish.id}" wish={wish} onDoneChange={onWishDoneChange} />
       ))}
     </ul>
   );
@@ -16,8 +16,8 @@ WishList.propTypes = {
   wishes: Proptypes.arrayOf(
     Proptypes.shape({
       id: Proptypes.number,
-      done: Proptypes.bool,
       text: Proptypes.string,
+      done: Proptypes.bool,
     })
   ),
 

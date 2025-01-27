@@ -5,13 +5,16 @@ export default function WishInput({ onNewWish }) {
   const [newWish, setNewWish] = useState("");
 
   const sendNewWish = () => {
-    const nuevodeseo = {
-      id: Date.now(),
-      text: newWish,
-      done: false,
-    };
-    document.getElementById("input").value = "";
-    onNewWish(nuevodeseo);
+    if (!newWish == "") {
+      const nuevodeseo = {
+        id: Date.now(),
+        text: newWish,
+        done: false,
+      };
+      document.getElementById("input").value = "";
+      onNewWish(nuevodeseo);
+      setNewWish("");
+    }
   };
 
   return (
