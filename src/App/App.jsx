@@ -1,43 +1,43 @@
 import { useState } from "react";
 import "./App.css";
-import WishInput from "../WishInput/WishInput.jsx";
-import WishList from "../WishList/WishList.jsx";
+import EntradaDeseos from "../EntradaDeseos/EntradaDeseos.jsx";
+import ListaDeseos from "../listaaDeseos/listaaDeseos.jsx";
 
-const wishlist = [
-  { id: 1, text: "Playstation 5", done: false },
-  { id: 2, text: "Macbook Pro", done: true },
-  { id: 3, text: "Tesla Model S", done: false },
+const Deseolista = [
+  { id: 1, texto: "Playstation 5", hecho: false },
+  { id: 2, texto: "Macbook Pro", hecho: true },
+  { id: 3, texto: "Tesla Model S", hecho: false },
 ];
 
 function App() {
-  const [wishes, setWishes] = useState(wishlist);
+  const [Deseos, setDeseos] = useState(Deseolista);
 
   return (
     <>
-      <h1>My wishlist</h1>
-      <WishInput
-        onNewWish={(a) => {
-          setWishes((wishes) => [a, ...wishes]);
+      <h1>My Deseolista</h1>
+      <EntradaDeseos
+        onNuevoDeseo={(a) => {
+          setDeseos((Deseos) => [a, ...Deseos]);
         }}
       />
       {/* 
 
-      setWishes(wishes.add (a))
+      setDeseos(Deseos.add (a))
       
-      (wishes) => [...wishes,a]
+      (Deseos) => [...Deseos,a]
 
-      setWishes((wishes) => [...wishes,a])
+      setDeseos((Deseos) => [...Deseos,a])
 
-      (a)=>{setWishes((wishes) => [...wishes,a])}
+      (a)=>{setDeseos((Deseos) => [...Deseos,a])}
       */}
-      <WishList wishes={wishes} onWishDoneChange={() => {}} />
+      <ListaDeseos Deseos={Deseos} onDeseohechoChange={() => {}} />
 
-      <div id="list">
+      <div id="lista">
         <button
-          className="wish-clear"
-          onClick={() => setWishes(wishes.filter((wish) => !wish.done))}
+          className="Deseo-clear"
+          onClick={() => setDeseos(Deseos.filter((Deseo) => !Deseo.hecho))}
         >
-          Archive done
+          Archive hecho
         </button>
       </div>
     </>

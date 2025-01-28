@@ -18,41 +18,41 @@ html {
   background-color: whitesmoke;
 }
 
-.wish-input {
+.Deseo-input {
   border: 0;
   border-bottom: 3px dashed grey;
   padding: 0;
 }
-.wish-input__label {
+.Deseo-input__label {
   font-weight: 700;
 }
-.wish-input__field {
+.Deseo-input__field {
   width: 100%;
   border: 0;
   padding: 1rem;
   font-size: 1.2rem;
   background-color: transparent;
 }
-.wish-list {
-  list-style: none;
+.Deseo-lista {
+  lista-style: none;
   padding: 0;
 }
-.wish-list__item {
+.Deseo-lista__item {
   display: flex;
   font-size: 1.2rem;
   align-items: center;
 }
-.wish-list__item > * + * {
+.Deseo-lista__item > * + * {
   margin-left: 1rem;
 }
-.wish-list__item input {
+.Deseo-lista__item input {
   width: 2rem;
   height: 2rem;
 }
-.wish-list__item--done label {
-  text-decoration: line-through;
+.Deseo-lista__item--hecho label {
+  texto-decoration: line-through;
 }
-.wish-clear {
+.Deseo-clear {
   width: 100%;
   padding: 0.5rem;
   background: white;
