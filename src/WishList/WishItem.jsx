@@ -13,9 +13,10 @@ export default function WishItem({ wish, onDoneChange }) {
         defaultChecked={wish.done}
         id={wish.id}
         onChange={(e) => {
-          setDone(e.target.checked);
-          wish.done = done;
-          onDoneChange(wish.done);
+          wish.done = e.target.checked;
+          setDone(wish.done);
+
+          // onDoneChange(wish.done);
         }}
       />
       <label htmlFor={wish.id}>{wish.text}</label>
