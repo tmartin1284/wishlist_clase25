@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import EntradaDeseos from "../EntradaDeseos/EntradaDeseos.jsx";
-import ListaDeseos from "../listaaDeseos/listaaDeseos.jsx";
+import ListaDeseos from "../ListaDeseos/ListaDeseos.jsx";
 
 const Deseolista = [
   { id: 1, texto: "Playstation 5", hecho: false },
@@ -22,6 +22,7 @@ function App() {
       />
       {/* 
 
+
       setDeseos(Deseos.add (a))
       
       (Deseos) => [...Deseos,a]
@@ -30,7 +31,7 @@ function App() {
 
       (a)=>{setDeseos((Deseos) => [...Deseos,a])}
       */}
-      <ListaDeseos Deseos={Deseos} onDeseohechoChange={() => {}} />
+      <ListaDeseos Deseos={Deseos} onActualizarDeseos={setDeseos} />
 
       <div id="lista">
         <button

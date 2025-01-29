@@ -1,8 +1,7 @@
 import Proptypes from "prop-types";
-import { useState } from "react";
+//import { useState } from "react";
 
-export default function DeseoItem({ Deseo, onhechoChange }) {
-  const [hecho, sethecho] = useState(Deseo.hecho);
+export default function DeseoItem({ Deseo, onCambioHecho }) {
   return (
     <li
       key={Deseo.id}
@@ -15,10 +14,7 @@ export default function DeseoItem({ Deseo, onhechoChange }) {
         defaultChecked={Deseo.hecho}
         id={Deseo.id}
         onChange={(e) => {
-          Deseo.hecho = e.target.checked;
-          sethecho(Deseo.hecho);
-
-          // onhechoChange(Deseo.hecho);
+          onCambioHecho(e.target.checked);
         }}
       />
       <label htmlFor={Deseo.id}>{Deseo.texto}</label>
@@ -33,5 +29,5 @@ DeseoItem.propTypes = {
     hecho: Proptypes.bool,
   }).isRequired,
 
-  onhechoChange: Proptypes.func.isRequired,
+  onCambioHecho: Proptypes.func.isRequired,
 };

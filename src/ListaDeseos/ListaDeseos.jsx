@@ -2,32 +2,39 @@
 import Proptypes from "prop-types";
 import DeseoItem from "./DeseoItem";
 
-export default function Deseolista({ Deseos, onDeseohechoChange }) {
+export default function ListaDeseos({ Deseos, onActualizarDeseos }) {
   return (
     <ul className="Deseo-lista">
-      {Deseos.map((Deseo) => (
+      {Deseos.map((Deseo, i) => (
         <DeseoItem
           key="{Deseo.id}"
           Deseo={Deseo}
-          onhechoChange={onDeseohechoChange}
+          onCambioHecho={(hecho) => {
+            //aqui debemos procesar el deseo que ha cambiado
+
+            const deseosactuales = [...Deseos];
+            deseosactuales[i].hecho = hecho;
+
+            onActualizarDeseos(deseosactuales);
+          }}
         />
       ))}
     </ul>
   );
 }
 
-Deseolista.propTypes = {
+ListaDeseos.propTypes = {
   Deseos: Proptypes.arrayOf(
     Proptypes.shape({
       id: Proptypes.number,
       texto: Proptypes.string,
       hecho: Proptypes.bool,
     })
-  ),
+  ).isRequired,
 
-  onDeseohechoChange: Proptypes.func.isRequired,
+  onActualizarDeseos: Proptypes.func.isRequired,
 };
 
-Deseolista.defaultProps = {
+ListaDeseos.defaultProps = {
   Deseos: [],
 };
