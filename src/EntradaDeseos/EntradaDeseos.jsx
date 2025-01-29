@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import "../App/App.css";
 
 export default function EntradaDeseo({ onNuevoDeseo }) {
   const [nuevoDeseo, setNuevoDeseo] = useState("");

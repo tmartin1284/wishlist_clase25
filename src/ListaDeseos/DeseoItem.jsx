@@ -1,4 +1,5 @@
 import Proptypes from "prop-types";
+import "../App/App.css";
 //import { useState } from "react";
 
 export default function DeseoItem({ Deseo, onCambioHecho }) {

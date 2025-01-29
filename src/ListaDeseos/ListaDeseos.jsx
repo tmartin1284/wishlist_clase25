@@ -1,5 +1,6 @@
 //import { useState } from "react";
 import Proptypes from "prop-types";
+import "../App/App.css";
 import DeseoItem from "./DeseoItem";
 
 export default function ListaDeseos({ Deseos, onActualizarDeseos }) {
