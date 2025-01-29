@@ -16,7 +16,7 @@ export default function EntradaDeseo({ onNuevoDeseo }) {
       setNuevoDeseo("");
     }
   };
-  // gsdfggsdfg
+  // gsdfggsdfghjkghggk
   // asdfasdadfa
   return (
     <fieldset id="new Deseos" className="Deseo-input">
