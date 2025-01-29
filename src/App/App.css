@@ -34,7 +34,7 @@ html {
   background-color: transparent;
 }
 .Deseo-lista {
-  lista-style: none;
+  list-style: none;
   padding: 0;
 }
 .Deseo-lista__item {
@@ -50,7 +50,7 @@ html {
   height: 2rem;
 }
 .Deseo-lista__item--hecho label {
-  texto-decoration: line-through;
+  text-decoration: line-through;
 }
 .Deseo-clear {
   width: 100%;

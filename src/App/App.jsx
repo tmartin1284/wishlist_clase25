@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <h1>My Deseolista</h1>
+      <h1>Mi lista de deseos bonita</h1>
       <EntradaDeseos
         onNuevoDeseo={(a) => {
           setDeseos((Deseos) => [a, ...Deseos]);
@@ -31,7 +31,15 @@ function App() {
 
       (a)=>{setDeseos((Deseos) => [...Deseos,a])}
       */}
-      <ListaDeseos Deseos={Deseos} onActualizarDeseos={setDeseos} />
+      <ListaDeseos
+        Deseos={Deseos}
+        onActualizarDeseos={(hecho, i) => {
+          const deseosactuales = [...Deseos];
+          deseosactuales[i].hecho = hecho;
+
+          setDeseos(deseosactuales);
+        }}
+      />
 
       <div id="lista">
         <button

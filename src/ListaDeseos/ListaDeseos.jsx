@@ -11,12 +11,13 @@ export default function ListaDeseos({ Deseos, onActualizarDeseos }) {
           key="{Deseo.id}"
           Deseo={Deseo}
           onCambioHecho={(hecho) => {
+            onActualizarDeseos(hecho, i);
             //aqui debemos procesar el deseo que ha cambiado
 
-            const deseosactuales = [...Deseos];
-            deseosactuales[i].hecho = hecho;
+            // const deseosactuales = [...Deseos];
+            // deseosactuales[i].hecho = hecho;
 
-            onActualizarDeseos(deseosactuales);
+            // onActualizarDeseos(deseosactuales);
           }}
         />
       ))}
