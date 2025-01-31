@@ -17,7 +17,7 @@ function App() {
       <h1>Mi lista de deseos bonita</h1>
       <EntradaDeseos
         onNuevoDeseo={(a) => {
-          setDeseos((Deseos) => [a, ...Deseos]);
+          setDeseos((Deseos) => [...Deseos, a]);
         }}
       />
       {/* 
