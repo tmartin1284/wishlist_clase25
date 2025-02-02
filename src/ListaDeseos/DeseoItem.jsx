@@ -6,12 +6,15 @@ export default function DeseoItem({ Deseo, onCambioHecho }) {
   const [edad, setEdad] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(
-      () => setEdad((segundos) => segundos + 1),
-      1000
-    );
-    return () => clearInterval(interval);
-  }, []);
+    if (Deseo.hecho) setEdad(0);
+    else {
+      const interval = setInterval(
+        () => setEdad((segundos) => segundos + 1),
+        1000
+      );
+      return () => clearInterval(interval);
+    }
+  }, [Deseo.hecho]);
 
   //aadfasdf
 

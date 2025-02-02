@@ -1,9 +1,10 @@
-//import { useState } from "react";
+//import logger from "react-Console-Logger";
 import Proptypes from "prop-types";
 import "../App/App.css";
 import DeseoItem from "./DeseoItem";
 
 export default function ListaDeseos({ Deseos, onActualizarDeseos }) {
+  // const l = new logger();
   return (
     <ul className="Deseo-lista">
       {Deseos.map((Deseo, i) => (
@@ -16,7 +17,9 @@ export default function ListaDeseos({ Deseos, onActualizarDeseos }) {
 
             // const deseosactuales = [...Deseos];
             // deseosactuales[i].hecho = hecho;
-
+            {
+              console.log(Deseo.id);
+            }
             // onActualizarDeseos(deseosactuales);
           }}
         />
